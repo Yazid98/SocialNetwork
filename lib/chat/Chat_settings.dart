@@ -133,7 +133,7 @@ class SettingsScreenState extends State<SettingsScreen> {
         isLoading = false;
       });
 
-      Fluttertoast.showToast(msg: "Update success");
+      Fluttertoast.showToast(msg: "Modification Réussie");
     }).catchError((err) {
       setState(() {
         isLoading = false;
@@ -230,7 +230,7 @@ class SettingsScreenState extends State<SettingsScreen> {
                   // Username
                   Container(
                     child: Text(
-                      'Nickname',
+                      'Surnom',
                       style: TextStyle(fontStyle: FontStyle.italic, fontWeight: FontWeight.bold, color: primaryColor),
                     ),
                     margin: EdgeInsets.only(left: 10.0, bottom: 5.0, top: 10.0),
@@ -240,7 +240,7 @@ class SettingsScreenState extends State<SettingsScreen> {
                       data: Theme.of(context).copyWith(primaryColor: primaryColor),
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: 'Sweetie',
+                          hintText: 'Adorable',
                           contentPadding: EdgeInsets.all(5.0),
                           hintStyle: TextStyle(color: greyColor),
                         ),
@@ -257,7 +257,7 @@ class SettingsScreenState extends State<SettingsScreen> {
                   // About me
                   Container(
                     child: Text(
-                      'About me',
+                      'A propos de moi',
                       style: TextStyle(fontStyle: FontStyle.italic, fontWeight: FontWeight.bold, color: primaryColor),
                     ),
                     margin: EdgeInsets.only(left: 10.0, top: 30.0, bottom: 5.0),
@@ -267,9 +267,9 @@ class SettingsScreenState extends State<SettingsScreen> {
                       data: Theme.of(context).copyWith(primaryColor: primaryColor),
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: 'Fun, like travel and play PES...',
+                          hintText: 'Qu\'aime tu faire ? ',
                           contentPadding: EdgeInsets.all(5.0),
-                          hintStyle: TextStyle(color: greyColor),
+                          hintStyle: TextStyle(color: Colors.white),
                         ),
                         controller: controllerAboutMe,
                         onChanged: (value) {
@@ -289,7 +289,7 @@ class SettingsScreenState extends State<SettingsScreen> {
                 child: TextButton(
                   onPressed: handleUpdateData,
                   child: Text(
-                    'UPDATE',
+                    'Mettre à jour',
                     style: TextStyle(fontSize: 16.0, color: Colors.white),
                   ),
                   style: ButtonStyle(

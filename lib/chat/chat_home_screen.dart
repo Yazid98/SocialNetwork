@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -13,7 +12,6 @@ import 'package:insta_projet_master1/chat/user_chat.dart';
 import 'Chat_settings.dart';
 import 'chat.dart';
 import 'loading.dart';
-
 
 
 class ChatHomeScreen extends StatefulWidget {
@@ -87,7 +85,7 @@ class ChatHomeScreenState extends State<ChatHomeScreen> {
   }
 
   void onItemMenuPress(Choice choice) {
-    if (choice.title == 'Log out') {
+    if (choice.title == 'Deconnexion') {
       handleSignOut();
     } else {
       Navigator.push(context, MaterialPageRoute(builder: (context) => ChatSettings()));
@@ -147,11 +145,11 @@ class ChatHomeScreenState extends State<ChatHomeScreen> {
                       margin: EdgeInsets.only(bottom: 10.0),
                     ),
                     Text(
-                      'Exit app',
+                      'Sortir ?',
                       style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      'Are you sure to exit app?',
+                      'Êtes vous sur ?',
                       style: TextStyle(color: Colors.white70, fontSize: 14.0),
                     ),
                   ],
@@ -171,7 +169,7 @@ class ChatHomeScreenState extends State<ChatHomeScreen> {
                       margin: EdgeInsets.only(right: 10.0),
                     ),
                     Text(
-                      'CANCEL',
+                      'Annuler',
                       style: TextStyle(color: primaryColor, fontWeight: FontWeight.bold),
                     )
                   ],
@@ -191,7 +189,7 @@ class ChatHomeScreenState extends State<ChatHomeScreen> {
                       margin: EdgeInsets.only(right: 10.0),
                     ),
                     Text(
-                      'YES',
+                      'Oui',
                       style: TextStyle(color: primaryColor, fontWeight: FontWeight.bold),
                     )
                   ],
@@ -233,7 +231,7 @@ class ChatHomeScreenState extends State<ChatHomeScreen> {
           style: TextStyle(color: primaryColor, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        actions: <Widget>[
+        /*actions: <Widget>[
           PopupMenuButton<Choice>(
             onSelected: onItemMenuPress,
             itemBuilder: (BuildContext context) {
@@ -258,7 +256,7 @@ class ChatHomeScreenState extends State<ChatHomeScreen> {
               }).toList();
             },
           ),
-        ],
+        ]*/
       ),
       body: WillPopScope(
         child: Stack(
