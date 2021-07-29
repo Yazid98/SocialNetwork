@@ -1,10 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:insta_projet_master1/Service/Auth_Service.dart';
-
 import 'Authenticate/loginSreen.dart';
 import 'Authenticate/signUpScreen.dart';
-import 'home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,23 +16,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Widget currentPage = HomePage();
-  AuthClass authClass = AuthClass();
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    checkLogin();
-  }
-
-  void checkLogin() async{
-    String? token = await authClass.getToken();
-    if(token !=null){
-      setState(() {
-        currentPage = HomeScreen();
-      });
-    }
   }
 
   @override
@@ -46,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.blueAccent,
       ),
-      home: currentPage,
+      home: HomePage(),
     );
   }
 }

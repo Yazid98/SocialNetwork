@@ -17,8 +17,6 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _emailController =   TextEditingController();
   TextEditingController _passwordController =   TextEditingController();
   bool circular = false;
-  AuthClass authClass = AuthClass();
-
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: MaterialButton(
                       minWidth: double.infinity,
                       height: 60,
-                      onPressed: () => googleSignIn(),
+                      onPressed: () => signIn(),
                       color: Color(0xff0095FF),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
@@ -167,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void googleSignIn() async {
+  void signIn() async {
     try {
       firebase_auth.UserCredential userCredential = await firebaseAuth
           .signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);

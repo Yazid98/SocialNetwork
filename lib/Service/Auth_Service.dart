@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+/*import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,6 +7,10 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../home_screen.dart';
 
 class AuthClass{
+
+  getCurrentUser() async {
+    return await auth.currentUser;
+  }
 
   GoogleSignIn _googleSignIn = GoogleSignIn(
       scopes: [
@@ -18,7 +22,7 @@ class AuthClass{
   FirebaseAuth auth = FirebaseAuth.instance;
   final storage = new FlutterSecureStorage();
 
-  Future<void> googleSignIn(BuildContext context) async {
+  Future<void> signIn(BuildContext context) async {
     try {
       GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
       if(googleSignInAccount != null){
@@ -28,14 +32,13 @@ class AuthClass{
           idToken: googleSignInAuthentication.idToken,
           accessToken: googleSignInAuthentication.accessToken,
         );
-
         try {
           UserCredential userCredential  =
           await auth.signInWithCredential(credential);
           storeTokenAndData(userCredential);
           Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (builder) => HomeScreen()),
+              MaterialPageRoute(builder: (builder) => HomeScreen(currentUserId: firebaseUser.uid))),
                   (route) => false);
         } on Exception catch (e) {
           final snackbar = SnackBar(content: Text(e.toString()));
@@ -50,6 +53,7 @@ class AuthClass{
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
     }
   }
+
   Future<void> storeTokenAndData(UserCredential userCredential) async{
     await storage.write(
         key: "token", value: userCredential.credential?.token.toString());
@@ -61,4 +65,4 @@ class AuthClass{
     return await
     storage.read(key: "token");
   }
-}
+}*/
