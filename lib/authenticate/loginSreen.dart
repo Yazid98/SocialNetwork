@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:insta_projet_master1/Service/Auth_Service.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:insta_projet_master1/chat/user_chat.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -224,7 +223,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> handleSignIn() async {
     prefs = await SharedPreferences.getInstance();
-
     this.setState(() {
       isLoading = true;
     });
