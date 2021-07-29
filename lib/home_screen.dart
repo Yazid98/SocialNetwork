@@ -13,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
-  final screen = [Profile(), Dashboard(), Chat(), Survey(), AllSurvey()];
+  final screen = [Survey(), Dashboard(), Profile(), Chat(), AllSurvey()];
 
   @override
   Widget build(BuildContext context) {
