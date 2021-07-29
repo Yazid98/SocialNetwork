@@ -1,19 +1,25 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:insta_projet_master1/pages/all_survey.dart';
-import 'package:insta_projet_master1/pages/chat.dart';
+import 'package:insta_projet_master1/chat/chat.dart';
 import 'package:insta_projet_master1/pages/dashboard.dart';
 import 'package:insta_projet_master1/pages/profile.dart';
 import 'package:insta_projet_master1/pages/survey.dart';
 
+import 'chat/chat_home_screen.dart';
+
 class HomeScreen extends StatefulWidget {
+  late final String currentUserId;
+
+  HomeScreen({Key? key}) : super(key: key);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
-  final screen = [Profile(), Dashboard(), Chat(), Survey(), AllSurvey()];
+  final screen = [Survey(), Dashboard(),Profile(), ChatHomeScreen(currentUserId: '',), AllSurvey()];
 
   @override
   Widget build(BuildContext context) {

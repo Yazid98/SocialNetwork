@@ -8,6 +8,8 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +17,8 @@ class _DashboardState extends State<Dashboard> {
       Center(
           child:
             Text(
-                "Ceci est le dashboard")
+                "Ceci est le Fil d'actualité",
+            )
       ),
     );
   }
